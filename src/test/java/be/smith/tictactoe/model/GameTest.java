@@ -39,21 +39,23 @@ public class GameTest {
     public void positionShouldBeSetToXAfterFirstPlay() {
         Game game = new Game();
         game.play(0, 0);
-        for (int i=0; i <3 ; i++) {
-            for (int j=0 ; j<3 ; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 if (i == 0 && j == 0) {
                     Assert.assertEquals("Position is not set to 'X' after first play",
                                         new Character('X'),
                                         game.getBoard()[i][j]);
                 } else {
-                    Assert.assertNull(String.format("Position %d,%d is not null after first play on position 0,0", i, j), game.getBoard()[i][j]);
+                    Assert.assertNull(String.format("Position %d,%d is not null after first play on position 0,0",
+                                                    i,
+                                                    j), game.getBoard()[i][j]);
                 }
             }
         }
     }
 
     @Test
-    public void trunShouldBeOAfterFirstPlay() {
+    public void turnShouldBeOAfterFirstPlay() {
         Game game = new Game();
         game.play(0, 0);
         Assert.assertEquals("Turn is not 'O' after first play", new Character('O'), game.getTurn());
