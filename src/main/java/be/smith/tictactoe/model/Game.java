@@ -4,12 +4,13 @@ import be.smith.tictactoe.exception.*;
 
 public class Game {
 
+    public static final int DIMENSION = 3;
     private Character turn;
     private Character[][] board;
 
     public Game() {
         turn = 'X';
-        board = new Character[3][3];
+        board = new Character[DIMENSION][DIMENSION];
     }
 
     public Character getTurn() {
@@ -27,6 +28,9 @@ public class Game {
      * @throws IllegalPositionException if position is already played
      */
     public void play(int rowIndex, int columnIndex) {
+        if (rowIndex < 0 || rowIndex > DIMENSION - 1 || columnIndex < 0 || columnIndex > DIMENSION - 1) {
+            throw new IllegalPositionException("Coordinates are out of bound");
+        }
         if (board[rowIndex][columnIndex] != null) {
             throw new IllegalPositionException("Position already played");
         }
