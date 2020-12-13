@@ -51,6 +51,21 @@ public class Game {
         return win;
     }
 
+    public boolean isDraw() {
+        return isFull() && !isWinFor('X') && !isWinFor('O');
+    }
+
+    private boolean isFull() {
+        for (Character[] rows : board) {
+            for(Character position : rows) {
+                if (position == null) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     private boolean rowMatch(int i, Character turn) {
         for (int j = 0 ; j < DIMENSION ; j ++) {
             if (!turn.equals(board[i][j])) {
