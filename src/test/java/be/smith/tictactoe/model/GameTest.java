@@ -167,5 +167,39 @@ public class GameTest {
         Assert.assertTrue(game.isWinFor('X'));
     }
 
+    @Test
+    public void gameShouldBeWonWhen3InARowVerticallyAtColumn1() {
+        Game game = new Game();
+        game.play(0,1);
+        game.play(0,0);
+        game.play(1,1);
+        game.play(1,0);
+        game.play(0, 2);
+        game.play(2,0);
+        Assert.assertTrue(game.isWinFor('O'));
+    }
 
+    @Test
+    public void gameShouldBeWonWhen3InARowVerticallyAtColumn2() {
+        Game game = new Game();
+        game.play(0,0);
+        game.play(0,1);
+        game.play(1,0);
+        game.play(1,1);
+        game.play(0, 2);
+        game.play(2,1);
+        Assert.assertTrue(game.isWinFor('O'));
+    }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowVerticallyAtColumn3() {
+        Game game = new Game();
+        game.play(0,0);
+        game.play(0,2);
+        game.play(1,0);
+        game.play(1,2);
+        game.play(0, 1);
+        game.play(2,2);
+        Assert.assertTrue(game.isWinFor('O'));
+    }
 }

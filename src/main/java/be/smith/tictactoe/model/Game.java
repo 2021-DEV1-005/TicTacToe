@@ -43,11 +43,23 @@ public class Game {
         for (int i = 0 ; i < DIMENSION ; i++) {
             win = win || rowMatch(i, turn);
         }
+        for (int j = 0 ; j < DIMENSION ; j++) {
+            win = win || columnMatch(j, turn);
+        }
         return win;
     }
 
     private boolean rowMatch(int i, Character turn) {
         for (int j = 0 ; j < DIMENSION ; j ++) {
+            if (!turn.equals(board[i][j])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean columnMatch(int j, Character turn) {
+        for (int i = 0 ; i < DIMENSION ; i ++) {
             if (!turn.equals(board[i][j])) {
                 return false;
             }
