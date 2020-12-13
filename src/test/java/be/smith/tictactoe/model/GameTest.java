@@ -118,4 +118,19 @@ public class GameTest {
             throw e;
         }
     }
+
+    @Test
+    public void shouldAlternateXandOsWhenPlaying() {
+        Game game = new Game();
+        game.play(0,0);
+        Assert.assertEquals("Position not set to 'X' at first play", new Character('X'), game.getBoard()[0][0]);
+        game.play(0,1);
+        Assert.assertEquals("Position not set to 'O' at second play", new Character('O'), game.getBoard()[0][1]);
+        game.play(0,2);
+        Assert.assertEquals("Position not set to 'X' at third play", new Character('X'), game.getBoard()[0][2]);
+        game.play(1,0);
+        Assert.assertEquals("Position not set to 'O' at fourth play", new Character('O'), game.getBoard()[1][0]);
+        game.play(1, 1);
+        Assert.assertEquals("Position not set to 'X' at fifth play", new Character('X'), game.getBoard()[1][1]);
+    }
 }
