@@ -46,6 +46,8 @@ public class Game {
         for (int j = 0 ; j < DIMENSION ; j++) {
             win = win || columnMatch(j, turn);
         }
+        win = win || (turn.equals(board[0][0]) && turn.equals(board[1][1]) && turn.equals(board[2][2]));
+        win = win || (turn.equals(board[0][2]) && turn.equals(board[1][1]) && turn.equals(board[2][0]));
         return win;
     }
 

@@ -202,4 +202,27 @@ public class GameTest {
         game.play(2,2);
         Assert.assertTrue(game.isWinFor('O'));
     }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowInDiagonalTopLeftToBottomRight() {
+        Game game = new Game();
+        game.play(0,0);
+        game.play(0,1);
+        game.play(1,1);
+        game.play(0,2);
+        game.play(2, 2);
+        Assert.assertTrue(game.isWinFor('X'));
+    }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowInDiagonalTopRightToBottomLeft() {
+        Game game = new Game();
+        game.play(0,2);
+        game.play(0,0);
+        game.play(1,1);
+        game.play(0,1);
+        game.play(2, 0);
+        Assert.assertTrue(game.isWinFor('X'));
+    }
+
 }
