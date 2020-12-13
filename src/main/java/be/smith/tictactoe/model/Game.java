@@ -17,4 +17,8 @@ public class Game {
     public Character[][] getBoard() {
         return board;
     }
+
+    public void play(int rowIndex, int columnIndex) {
+        board[rowIndex][columnIndex] = turn;
+    }
 }
