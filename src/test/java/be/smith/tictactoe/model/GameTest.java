@@ -122,13 +122,13 @@ public class GameTest {
     @Test
     public void shouldAlternateXandOsWhenPlaying() {
         Game game = new Game();
-        game.play(0,0);
+        game.play(0, 0);
         Assert.assertEquals("Position not set to 'X' at first play", new Character('X'), game.getBoard()[0][0]);
-        game.play(0,1);
+        game.play(0, 1);
         Assert.assertEquals("Position not set to 'O' at second play", new Character('O'), game.getBoard()[0][1]);
-        game.play(0,2);
+        game.play(0, 2);
         Assert.assertEquals("Position not set to 'X' at third play", new Character('X'), game.getBoard()[0][2]);
-        game.play(1,0);
+        game.play(1, 0);
         Assert.assertEquals("Position not set to 'O' at fourth play", new Character('O'), game.getBoard()[1][0]);
         game.play(1, 1);
         Assert.assertEquals("Position not set to 'X' at fifth play", new Character('X'), game.getBoard()[1][1]);
@@ -137,10 +137,10 @@ public class GameTest {
     @Test
     public void gameShouldBeWonWhen3InARowHorizontallyAtRow1() {
         Game game = new Game();
-        game.play(0,0);
-        game.play(1,0);
-        game.play(0,1);
-        game.play(1,1);
+        game.play(0, 0);
+        game.play(1, 0);
+        game.play(0, 1);
+        game.play(1, 1);
         game.play(0, 2);
         Assert.assertTrue(game.isWinFor('X'));
     }
@@ -148,10 +148,10 @@ public class GameTest {
     @Test
     public void gameShouldBeWonWhen3InARowHorizontallyAtRow2() {
         Game game = new Game();
-        game.play(1,0);
-        game.play(0,0);
-        game.play(1,1);
-        game.play(0,1);
+        game.play(1, 0);
+        game.play(0, 0);
+        game.play(1, 1);
+        game.play(0, 1);
         game.play(1, 2);
         Assert.assertTrue(game.isWinFor('X'));
     }
@@ -159,10 +159,10 @@ public class GameTest {
     @Test
     public void gameShouldBeWonWhen3InARowHorizontallyAtRow3() {
         Game game = new Game();
-        game.play(2,0);
-        game.play(0,0);
-        game.play(2,1);
-        game.play(0,1);
+        game.play(2, 0);
+        game.play(0, 0);
+        game.play(2, 1);
+        game.play(0, 1);
         game.play(2, 2);
         Assert.assertTrue(game.isWinFor('X'));
     }
@@ -170,46 +170,46 @@ public class GameTest {
     @Test
     public void gameShouldBeWonWhen3InARowVerticallyAtColumn1() {
         Game game = new Game();
-        game.play(0,1);
-        game.play(0,0);
-        game.play(1,1);
-        game.play(1,0);
+        game.play(0, 1);
+        game.play(0, 0);
+        game.play(1, 1);
+        game.play(1, 0);
         game.play(0, 2);
-        game.play(2,0);
+        game.play(2, 0);
         Assert.assertTrue(game.isWinFor('O'));
     }
 
     @Test
     public void gameShouldBeWonWhen3InARowVerticallyAtColumn2() {
         Game game = new Game();
-        game.play(0,0);
-        game.play(0,1);
-        game.play(1,0);
-        game.play(1,1);
+        game.play(0, 0);
+        game.play(0, 1);
+        game.play(1, 0);
+        game.play(1, 1);
         game.play(0, 2);
-        game.play(2,1);
+        game.play(2, 1);
         Assert.assertTrue(game.isWinFor('O'));
     }
 
     @Test
     public void gameShouldBeWonWhen3InARowVerticallyAtColumn3() {
         Game game = new Game();
-        game.play(0,0);
-        game.play(0,2);
-        game.play(1,0);
-        game.play(1,2);
+        game.play(0, 0);
+        game.play(0, 2);
+        game.play(1, 0);
+        game.play(1, 2);
         game.play(0, 1);
-        game.play(2,2);
+        game.play(2, 2);
         Assert.assertTrue(game.isWinFor('O'));
     }
 
     @Test
     public void gameShouldBeWonWhen3InARowInDiagonalTopLeftToBottomRight() {
         Game game = new Game();
-        game.play(0,0);
-        game.play(0,1);
-        game.play(1,1);
-        game.play(0,2);
+        game.play(0, 0);
+        game.play(0, 1);
+        game.play(1, 1);
+        game.play(0, 2);
         game.play(2, 2);
         Assert.assertTrue(game.isWinFor('X'));
     }
@@ -217,10 +217,10 @@ public class GameTest {
     @Test
     public void gameShouldBeWonWhen3InARowInDiagonalTopRightToBottomLeft() {
         Game game = new Game();
-        game.play(0,2);
-        game.play(0,0);
-        game.play(1,1);
-        game.play(0,1);
+        game.play(0, 2);
+        game.play(0, 0);
+        game.play(1, 1);
+        game.play(0, 1);
         game.play(2, 0);
         Assert.assertTrue(game.isWinFor('X'));
     }
@@ -228,10 +228,10 @@ public class GameTest {
     @Test
     public void gameShouldBeDrawIfFullAndNotWin() {
         Game game = new Game();
-        game.play(0,0);
-        game.play(0,1);
-        game.play(0,2);
-        game.play(1,0);
+        game.play(0, 0);
+        game.play(0, 1);
+        game.play(0, 2);
+        game.play(1, 0);
         game.play(1, 2);
         game.play(1, 1);
         game.play(2, 0);

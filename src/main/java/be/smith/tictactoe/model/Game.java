@@ -23,6 +23,7 @@ public class Game {
 
     /**
      * Play turn at a position
+     *
      * @param rowIndex row index of the position to play
      * @param columnIndex column index of the position to play
      * @throws IllegalPositionException if position is already played or if indexes are out of bound
@@ -40,10 +41,10 @@ public class Game {
 
     public boolean isWinFor(Character turn) {
         boolean win = false;
-        for (int i = 0 ; i < DIMENSION ; i++) {
+        for (int i = 0; i < DIMENSION; i++) {
             win = win || rowMatch(i, turn);
         }
-        for (int j = 0 ; j < DIMENSION ; j++) {
+        for (int j = 0; j < DIMENSION; j++) {
             win = win || columnMatch(j, turn);
         }
         win = win || (turn.equals(board[0][0]) && turn.equals(board[1][1]) && turn.equals(board[2][2]));
@@ -57,7 +58,7 @@ public class Game {
 
     private boolean isFull() {
         for (Character[] rows : board) {
-            for(Character position : rows) {
+            for (Character position : rows) {
                 if (position == null) {
                     return false;
                 }
@@ -67,7 +68,7 @@ public class Game {
     }
 
     private boolean rowMatch(int i, Character turn) {
-        for (int j = 0 ; j < DIMENSION ; j ++) {
+        for (int j = 0; j < DIMENSION; j++) {
             if (!turn.equals(board[i][j])) {
                 return false;
             }
@@ -76,7 +77,7 @@ public class Game {
     }
 
     private boolean columnMatch(int j, Character turn) {
-        for (int i = 0 ; i < DIMENSION ; i ++) {
+        for (int i = 0; i < DIMENSION; i++) {
             if (!turn.equals(board[i][j])) {
                 return false;
             }

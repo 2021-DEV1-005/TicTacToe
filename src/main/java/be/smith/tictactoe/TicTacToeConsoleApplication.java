@@ -21,7 +21,7 @@ public class TicTacToeConsoleApplication implements CommandLineRunner {
     @Override public void run(String... args) {
         System.out.println("Welcome to awesome Tic Tac Toe!");
         boolean go = true;
-        while(go) {
+        while (go) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Start a new game ? (y/n)");
             try {
