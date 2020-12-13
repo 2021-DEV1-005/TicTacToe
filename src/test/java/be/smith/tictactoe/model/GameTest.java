@@ -133,4 +133,39 @@ public class GameTest {
         game.play(1, 1);
         Assert.assertEquals("Position not set to 'X' at fifth play", new Character('X'), game.getBoard()[1][1]);
     }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowHorizontallyAtRow1() {
+        Game game = new Game();
+        game.play(0,0);
+        game.play(1,0);
+        game.play(0,1);
+        game.play(1,1);
+        game.play(0, 2);
+        Assert.assertTrue(game.isWinFor('X'));
+    }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowHorizontallyAtRow2() {
+        Game game = new Game();
+        game.play(1,0);
+        game.play(0,0);
+        game.play(1,1);
+        game.play(0,1);
+        game.play(1, 2);
+        Assert.assertTrue(game.isWinFor('X'));
+    }
+
+    @Test
+    public void gameShouldBeWonWhen3InARowHorizontallyAtRow3() {
+        Game game = new Game();
+        game.play(2,0);
+        game.play(0,0);
+        game.play(2,1);
+        game.play(0,1);
+        game.play(2, 2);
+        Assert.assertTrue(game.isWinFor('X'));
+    }
+
+
 }
