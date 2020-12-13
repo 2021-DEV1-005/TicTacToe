@@ -1,5 +1,6 @@
 package be.smith.tictactoe.model;
 
+import be.smith.tictactoe.exception.*;
 import org.junit.*;
 
 public class GameTest {
@@ -59,5 +60,18 @@ public class GameTest {
         Game game = new Game();
         game.play(0, 0);
         Assert.assertEquals("Turn is not 'O' after first play", new Character('O'), game.getTurn());
+    }
+
+    @Test(expected = IllegalPositionException.class)
+    public void shouldThrowIllegalPositionExceptionWhenPlayingAnAlreadyPlayedPosition() {
+        Game game = new Game();
+        game.play(0, 0);
+        try {
+            game.play(0, 0);
+        } catch (IllegalPositionException e) {
+            Assert.assertEquals("Position already played", e.getMessage());
+            Assert.assertEquals("Position has been played over", new Character('X'), game.getBoard()[0][0]);
+            throw e;
+        }
     }
 }

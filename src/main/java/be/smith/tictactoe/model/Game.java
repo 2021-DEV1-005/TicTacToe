@@ -1,5 +1,7 @@
 package be.smith.tictactoe.model;
 
+import be.smith.tictactoe.exception.*;
+
 public class Game {
 
     private Character turn;
@@ -18,7 +20,16 @@ public class Game {
         return board;
     }
 
+    /**
+     * Play turn at a position
+     * @param rowIndex row index of the position to play
+     * @param columnIndex column index of the position to play
+     * @throws IllegalPositionException if position is already played
+     */
     public void play(int rowIndex, int columnIndex) {
+        if (board[rowIndex][columnIndex] != null) {
+            throw new IllegalPositionException("Position already played");
+        }
         board[rowIndex][columnIndex] = turn;
         togglePosition();
     }
