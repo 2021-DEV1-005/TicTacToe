@@ -35,7 +35,7 @@ public class Game {
             throw new IllegalPositionException("Position already played");
         }
         board[rowIndex][columnIndex] = turn;
-        togglePosition();
+        toggleTurn();
     }
 
     public boolean isWinFor(Character turn) {
@@ -84,7 +84,7 @@ public class Game {
         return true;
     }
 
-    private void togglePosition() {
+    private void toggleTurn() {
         turn = turn == 'X' ? 'O' : 'X';
     }
 }
