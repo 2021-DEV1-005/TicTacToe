@@ -51,4 +51,11 @@ public class GameTest {
             }
         }
     }
+
+    @Test
+    public void trunShouldBeOAfterFirstPlay() {
+        Game game = new Game();
+        game.play(0, 0);
+        Assert.assertEquals("Turn is not 'O' after first play", new Character('O'), game.getTurn());
+    }
 }

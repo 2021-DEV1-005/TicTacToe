@@ -20,5 +20,10 @@ public class Game {
 
     public void play(int rowIndex, int columnIndex) {
         board[rowIndex][columnIndex] = turn;
+        togglePosition();
+    }
+
+    private void togglePosition() {
+        turn = turn == 'X' ? 'O' : 'X';
     }
 }
