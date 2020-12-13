@@ -25,7 +25,7 @@ public class Game {
      * Play turn at a position
      * @param rowIndex row index of the position to play
      * @param columnIndex column index of the position to play
-     * @throws IllegalPositionException if position is already played
+     * @throws IllegalPositionException if position is already played or if indexes are out of bound
      */
     public void play(int rowIndex, int columnIndex) {
         if (rowIndex < 0 || rowIndex > DIMENSION - 1 || columnIndex < 0 || columnIndex > DIMENSION - 1) {
